@@ -1,0 +1,157 @@
+#1
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+person1 = Person("Slavik", "67")
+person2 = Person("Ishak", "55")
+print(f"Имя: {person1.name}, возраст:{person1.age}")
+print(f"Имя: {person2.name}, возраст:{person2.age}")
+
+#2
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"Моё имя {self.name}, мне {self.age} лет")
+person1 = Person("Иван", 25)
+person2 = Person("Вася", 24)
+
+person1.introduce()
+person2.introduce()
+
+#3
+class Book:
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+    def reading_time(self):
+        time = 2
+        print(time*self.pages)
+
+book = Book("Azbyka", "Petya", 67)
+book.reading_time()
+
+#4
+class Car:
+    def __init__(self, brand, model, year, cyear):
+        self.brand = brand
+        self.model = model
+        self.year = year
+    def get_info(self):
+        print(f"Бренд: {self.brand}, Модель автомобиля:{self.model}, Год выпуска: {self.year}")
+    def get_age(self):
+        age = 2026
+        print(age - self.year)
+
+car1 = Car("Мазда", "Не шарю", 2010, 2026)
+car2 = Car("Газэлька", "Ель", 2007, 2026)
+
+car1.get_age()
+car2.get_age()
+
+#5
+class Student:
+    def __init__(self, name: str, grades: list):
+        self.name = name
+        self.grades = grades
+    def about_grades(self):
+        print(f"Имя: {self.name}, оценка: {self.grades}")
+    def average_grade(self):
+        if not self.grades:
+            return 0
+        return sum(self.grades) / len(self.grades)
+s = Student("Артур", [5,4,5,3])
+s.about_grades()
+print(s.average_grade())
+
+#6
+class Rectangle:
+    def __init__(self, width: float, height: float):
+        self.width = width
+        self.height = height
+    def area(self) -> float:
+        return self.width * self.height
+    def perimeter(self) -> float:
+        return 2 * (self.width + self.height)
+r = Rectangle(4, 6)
+print(r.area())
+print(r.perimeter())
+
+#7
+class Movie:
+    def __init__(self, title, genre, rating):
+        self.title = title
+        self.genre = genre
+        self.rating = rating
+movies = [
+        Movie("Фильм 1", "ужастик", 7.7),
+        Movie("Фильм 2", "комедия", 6.9),
+        Movie("Фильм 3", "драма", 7.2),
+        Movie("Фильм 4", "мультфильм", 8.8),
+        Movie("Фильм 5", "комедия", 9.6),
+]
+for movie in movies:
+    if movie.rating > 7:
+        print(movie.title)
+
+#8
+class Temperature:
+    def __init__(self, celsius: float):
+        self.celsius = celsius
+    def to_fahrenheit(self) -> float:
+        return self.celsius * 9 / 5 + 32
+t = Temperature(100)
+print(t.to_fahrenheit())
+t = Temperature(0)
+print(t.to_fahrenheit())
+t = Temperature(-100)
+print(t.to_fahrenheit())
+
+#9
+class Shoppingitem:
+    def __init__(self, name: str, price: float, quantity: int):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+    def total_cost(self) -> float:
+        return self.price * self.quantity
+item = Shoppingitem("Вода", 399, 2)
+print(item.total_cost())
+item = Shoppingitem("Хлеб", 150, 5)
+print(item.total_cost())
+
+#10
+class Circle:
+    def __init__(self, radius: float):
+        self.radius = radius
+    def area(self) -> float:
+        return math.pi * self.radius ** 2
+    def circumference(self) -> float:
+        return 2 * math.pi * self.radius
+c = Circle(6)
+print(c.area())
+print(c.circumference())
+
+print(round(c.area), 2)
+print(round(c.circumference), 2)
+
+#11
+import math
+
+class Circle:
+    def __init__(self, radius: float):
+        self.radius = radius
+    def area(self) -> float:
+        return math.pi * self.radius ** 2
+    def circumference(self) -> float:
+        return 2 * math.pi * self.radius
+c = Circle(6)
+print(c.area())
+print(c.circumference())
+
+print(round(c.area()), 2)
+print(round(c.circumference()), 2)
