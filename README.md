@@ -1,2 +1,0 @@
-chochy chlopia
-saloma
